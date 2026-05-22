@@ -19,7 +19,7 @@ _The empty cell: a video-scale world model acting as both inference-time planner
 
 ## Thesis
 
-The full Dyna/Dreamer loop combines three things: (a) inference-time planning over a world model, (b) policy training from imagined rollouts, and (c) online co-improvement of both from real-robot experience. All three have been demonstrated together at compact-latent-WM scale by [FOWM](https://arxiv.org/abs/2310.16029) and [TD-MPC2](https://arxiv.org/abs/2310.16828). The video-WM and VLA-scale variants ([VLAW](https://arxiv.org/abs/2602.12063), [RehearseVLA](https://arxiv.org/html/2605.00080v1), [V-JEPA 2](https://arxiv.org/abs/2506.09985), [GEN-1](https://generalistai.com/blog/apr-02-2026-GEN-1), [π0](https://www.physicalintelligence.company/blog/pi0)) each cover two of the three ingredients, never all three. The empty cell, video-scale WM acting as both inference-time planner and training simulator for a VLA-scale policy, with both co-improving from real rollouts, is the research direction worth writing.
+The full Dyna/Dreamer loop combines three things: (a) inference-time planning over a world model, (b) policy training from imagined rollouts, and (c) online co-improvement of both from real-robot experience. All three have been demonstrated together at compact-latent-WM scale by [FOWM](https://arxiv.org/abs/2310.16029) (on a real robot) and [TD-MPC2](https://arxiv.org/abs/2310.16828) (in simulation). The video-WM and VLA-scale variants ([VLAW](https://arxiv.org/abs/2602.12063), [RehearseVLA](https://arxiv.org/html/2605.00080v1), [V-JEPA 2](https://arxiv.org/abs/2506.09985), [GEN-1](https://generalistai.com/blog/apr-02-2026-GEN-1), [π0](https://www.physicalintelligence.company/blog/pi0)) each cover two of the three ingredients, never all three. The empty cell, video-scale WM acting as both inference-time planner and training simulator for a VLA-scale policy, with both co-improving from real rollouts, is the research direction worth writing.
 
 ## What's already published, mapped to (a), (b), (c)
 
@@ -39,15 +39,15 @@ The full Dyna/Dreamer loop combines three things: (a) inference-time planning ov
 
 Ingredients: **(a)** inference-time planning · **(b)** policy training from imagined rollouts · **(c)** online co-improvement from real rollouts.
 
-| Work                       | (a)      | (b)     | (c) | Scale                               |
-| -------------------------- | -------- | ------- | --- | ----------------------------------- |
-| DayDreamer                 | ✗        | ✓       | ✓   | compact latent WM                   |
-| FOWM                       | ✓        | ✓       | ✓   | compact latent WM, single robot     |
-| TD-MPC2                    | ✓        | ✓       | ✓   | 317M params, sim, 80 tasks          |
-| VLAW / RehearseVLA         | ✗        | ✓       | ✓   | video WM + VLA                      |
-| V-JEPA 2                   | ✓        | partial | ✗   | video WM                            |
-| GEN-1 / π0 / GR-2 / Cosmos | implicit | ✓       | ✓   | video co-train + VLA                |
-| **This direction**         | ✓        | ✓       | ✓   | **video WM + VLA — the empty cell** |
+| Work                       | (a)      | (b)     | (c)          | Scale                               |
+| -------------------------- | -------- | ------- | ------------ | ----------------------------------- |
+| DayDreamer                 | ✗        | ✓       | ✓            | compact latent WM                   |
+| FOWM                       | ✓        | ✓       | ✓            | compact latent WM, single robot     |
+| TD-MPC2                    | ✓        | ✓       | ✓ (sim only) | 317M params, sim, 80 tasks          |
+| VLAW / RehearseVLA         | ✗        | ✓       | ✓            | video WM + VLA                      |
+| V-JEPA 2                   | ✓        | partial | ✗            | video WM                            |
+| GEN-1 / π0 / GR-2 / Cosmos | implicit | ✓       | ✓            | video co-train + VLA                |
+| **This direction**         | ✓        | ✓       | ✓            | **video WM + VLA — the empty cell** |
 
 The grid:
 
